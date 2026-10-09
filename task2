@@ -1,0 +1,21 @@
+global _start
+
+section .text
+_start:
+
+  mov rax, 0
+  mov rcx, 0
+  mov rdx, 10
+
+loop_start:
+  cmp rcx, rdx
+  jge loop_end
+
+  add rax, 3
+  inc rcx
+  jmp loop_start
+
+loop_end:
+  mov rdi, rax
+  mov rax, 60
+  syscall
